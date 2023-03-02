@@ -14,6 +14,10 @@ The major technique used in the model training process is Transfer Learning. Tra
 #### Oversampling to resolve Class Imbalance
 For individual labels, the dataset has roughly the same number of positive and negative cases. However, within the selected subset, there is a bias towards the number of cases with the same values on both labels (positive or negative on both Edema and Effusion), and against those with opposite labels on both conditions. As a result, the model more often than not, can be expected to produce correlated outputs, which might defeat the purpose of performing multi-label classification, where the outputs are expected to be independent of each other, at least in the prediction process. Therefore, there can be two approaches to handling this imbalance. One method would be to adjust the weights associated with the binary cross entropy loss function used in the model evaluation, and assign higher weights to cases with opposite labels to balance the number of cases on the other side. However, with both labels being produced independently, the process of model compiling does not account for four separate classes ((0, 0), (0, 1), (1, 0) and (1, 1) as opposed to just two classes on two variables. Therefore, in this project, the model will be trained on a random oversampling of the rarer classes of images on a scale proportional to its relative rarity in the dataset.
 
+### MODEL TRAINING PIPELINE
+Figure 1
+! [Pipeline](/DSC180B-Capstone/docs/assets/pipeline.png)
+
 
 ### RESULTS
 
