@@ -16,7 +16,7 @@ For individual labels, the dataset has roughly the same number of positive and n
 
 ### MODEL TRAINING PIPELINE
 Figure 1
-! [Pipeline](/DSC180B-Capstone/docs/assets/pipeline_1.png)
+[[https://github.com/shivsakthivel/DSC180B-Capstone/blob/main/docs/assets/pipeline_1.png | alt = pipeline]]
 
 
 ### RESULTS
