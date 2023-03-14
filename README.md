@@ -35,7 +35,7 @@ This project focuses on training a Convolutional Neural Network (CNN) for a supe
 | --------| ------------------ | ---------------------------- | --------------------------------------------- | ------- |
 | 0 - 35 | Last 3 Layers only | 0.6608 | 1194 / 1823 | 0.661 |
 | 35 - 50 | Conv Layer 5 Block 3 | 0.5818 | 1321 / 1823 | 0.763 |
-| 50 - 70 | Conv Layer 5 (All Blocks) | 0.5398 | 1377 / 1823 | 0.805 |
+| 50 - 70 | Conv Layer 5 (All Blocks) | **0.5398** | **1377 / 1823** | **0.805** |
 | 70 - 80 | Conv Layer 4 (Last 3 Blocks) + Conv Layer 5 | 0.5472 | 1360 / 1823 | 0.801 |
 
 <p>
