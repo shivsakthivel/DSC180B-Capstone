@@ -12,7 +12,7 @@ In addition to the convolutional layers, CNNs also typically include pooling lay
 <p>
     <img src="docs/assets/cnn_image.png" alt="CNN" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
-<a href="[https://www.something.com](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)"> *Image Source* </a>
+<a href= "https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53"> *Image Source* </a>
 
 Training a CNN involves optimizing the network's parameters using a loss function and backpropagation algorithm, similar to other types of neural networks. However, due to their larger number of parameters and deeper architectures, CNNs require large amounts of labeled data and significant computational resources for training.
 
