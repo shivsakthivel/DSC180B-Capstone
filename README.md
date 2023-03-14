@@ -9,6 +9,11 @@ The key component of a CNN is the convolutional layer, which applies a set of le
 
 In addition to the convolutional layers, CNNs also typically include pooling layers to reduce the spatial dimensions of the feature maps and improve the computational efficiency of the network, and fully connected layers to perform the final classification or regression task.
 
+<p>
+    <img src="docs/assets/cnn_image.PNG" alt="CNN" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
+[*Image Source*](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
+
 Training a CNN involves optimizing the network's parameters using a loss function and backpropagation algorithm, similar to other types of neural networks. However, due to their larger number of parameters and deeper architectures, CNNs require large amounts of labeled data and significant computational resources for training.
 
 Overall, CNNs have revolutionized the field of computer vision and have achieved state-of-the-art performance on many benchmark datasets. They have also found applications in other domains such as natural language processing and speech recognition.
