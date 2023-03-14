@@ -10,7 +10,7 @@ The key component of a CNN is the convolutional layer, which applies a set of le
 In addition to the convolutional layers, CNNs also typically include pooling layers to reduce the spatial dimensions of the feature maps and improve the computational efficiency of the network, and fully connected layers to perform the final classification or regression task.
 
 <p>
-    <img src="docs/assets/cnn_image.PNG" alt="CNN" width="50%" margin-left="auto" margin-right="auto"/>
+    <img src="docs/assets/cnn_image.png" alt="CNN" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 [*Image Source*](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
 
