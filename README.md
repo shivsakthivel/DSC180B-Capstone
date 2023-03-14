@@ -1,29 +1,40 @@
 ### Exploring the viability of Convolutional Neural Networks (CNNs) on a multi-label classification task to simultaneously detect Pulmonary Edema and Pleural Effusion
 
-### INTRODUCTION
+### BACKGROUND
 
-In this project, the MIMIC-CXR database of chest radiographs and patient reports will be used to train a CNN classifier, using transfer learning techniques. The MIMIC-CXR database consists of 377,000 radiographs, stored in a DICOM format with resolutions of up to 4K. As a result, the size of this database is 4 TB, and it is currently hosted in a Google Cloud bucket, where credentialed users can access the data. For this project, the classifier will predict two labels, associated with Pulmonary Edema and Pleural Effusion. In its current state, the database metadata contains information associated with 14 labels, automatically produced by running both the CheXpert and NegBio algorithms on the patient reports. Considering the performance of the model and computational resources available, the inputs to the classifier will be downsampled to standard 512*512 images, and a subset of 34,000 images which have labels associated with both conditions will be used for the training process. 
+#### Convolutional Neural Networks (CNN)
+Convolutional Neural Networks (CNNs) are a powerful class of deep neural networks that have shown remarkable success in a variety of computer vision tasks, such as image classification, object detection, and segmentation. CNNs were inspired by the visual processing mechanism of the human brain and are designed to automatically learn hierarchical representations of visual features from raw data, such as images.
 
-The goal is to build the classifier and analyze its performance on unseen data. The evaluation will be performed by assessing the accuracy metric on each label, analyzing the training and validation loss curves to test if the model is behaving correctly, analyzing the AUC-ROC curve for each label as a measure of the model’s diagnostic ability, and finally the activation maps on the radiographs as a test of the model’s interpretability.
+The key component of a CNN is the convolutional layer, which applies a set of learnable filters to the input image to extract local features. These filters slide over the entire image and perform a dot product operation with the local patch of pixels they are currently positioned over. By stacking multiple convolutional layers, the network can learn increasingly abstract and complex features, allowing it to capture high-level information such as object shapes, textures, and patterns.
+
+In addition to the convolutional layers, CNNs also typically include pooling layers to reduce the spatial dimensions of the feature maps and improve the computational efficiency of the network, and fully connected layers to perform the final classification or regression task.
+
+Training a CNN involves optimizing the network's parameters using a loss function and backpropagation algorithm, similar to other types of neural networks. However, due to their larger number of parameters and deeper architectures, CNNs require large amounts of labeled data and significant computational resources for training.
+
+Overall, CNNs have revolutionized the field of computer vision and have achieved state-of-the-art performance on many benchmark datasets. They have also found applications in other domains such as natural language processing and speech recognition.
+
+#### Transfer Learning
+Transfer learning is a machine learning technique that involves using a pre-trained neural network to solve a new task. Instead of training a neural network from scratch, transfer learning involves taking an existing neural network that has already been trained on a large dataset and adapting it for a new task. The pre-trained neural network is typically a deep neural network that has learned to recognize complex features in images. To adapt the pre-trained network for a new task, the final layers of the network are typically replaced with new layers that are specific to the new task. These new layers are then trained on a smaller dataset that is specific to the new task. This approach allows for the transfer of knowledge from the pre-trained network, which has learned to recognize general features, to the new task, which may require more specialized features.
+
+### OBJECTIVES
+
+This project focuses on training a Convolutional Neural Network (CNN) for a supervised classification task, specifically for predicting the presence of pulmonary edema and pleural effusion in chest radiographs. The project is a series of experiments to formulate a pipeline based on deep learning best practices, to achieve the best performing model for this multi-label classification task. The first experiment involved determining the appropriate application of transfer learning to chest radiograph image data. The second experiment involved testing different formulations of the problem statement to achieve the best performing model. Separated binary label classifiers, a multi-label classifier and a multi-class classifier were all trained and evaluated using label prediction accuracy and the AUC (Area Under the Curve) of the ROC (Receiver Operating Characteristic) curve which is a measure of the model’s discriminability.
 
 ### METHODS
 
-#### Transfer Learning
-The major technique used in the model training process is Transfer Learning. Transfer learning is a machine learning technique where a pre-trained model on a large dataset is fine-tuned on a smaller related dataset. The goal of transfer learning is to leverage the knowledge learned from the large dataset and apply it to the smaller related dataset, allowing the model to learn more efficiently and perform better. The key advantage of transfer learning is that it saves the time and computational resources needed to train a deep learning model from scratch, and it also helps the model to overcome the problem of limited data by leveraging knowledge from a similar domain.
-
-#### Oversampling to resolve Class Imbalance
-For individual labels, the dataset has roughly the same number of positive and negative cases. However, within the selected subset, there is a bias towards the number of cases with the same values on both labels (positive or negative on both Edema and Effusion), and against those with opposite labels on both conditions. As a result, the model more often than not, can be expected to produce correlated outputs, which might defeat the purpose of performing multi-label classification, where the outputs are expected to be independent of each other, at least in the prediction process. Therefore, there can be two approaches to handling this imbalance. One method would be to adjust the weights associated with the binary cross entropy loss function used in the model evaluation, and assign higher weights to cases with opposite labels to balance the number of cases on the other side. However, with both labels being produced independently, the process of model compiling does not account for four separate classes ((0, 0), (0, 1), (1, 0) and (1, 1) as opposed to just two classes on two variables. Therefore, in this project, the model will be trained on a random oversampling of the rarer classes of images on a scale proportional to its relative rarity in the dataset.
-
-
-### RESULTS
-
+#### Experiment I
 <p>
     <img src="docs/assets/training.PNG" alt="Training Pipeline" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
+
+#### Experiment II
 <p>
     <img src="docs/assets/models.PNG" alt="Models for Comparison" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
+
+### RESULTS
+
 
 <p>
     <img src="docs/assets/cf_edema.png" alt="Single Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
