@@ -22,7 +22,7 @@ For individual labels, the dataset has roughly the same number of positive and n
 </p>
 
 <p>
-    <img src="docs/assets/models.png" alt="Models for Comparison" width="50%" margin-left="auto" margin-right="auto"/>
+    <img src="docs/assets/models.PNG" alt="Models for Comparison" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
 <p>
