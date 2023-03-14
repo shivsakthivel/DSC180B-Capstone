@@ -18,8 +18,35 @@ For individual labels, the dataset has roughly the same number of positive and n
 ### RESULTS
 
 <p>
-    <img src="./sample_train.png" alt="training sample" width="50%" margin-left="auto" margin-right="auto"/>
+    <img src="docs/assets/training.PNG" alt="Training Pipeline" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
+
+<p>
+    <img src="docs/assets/models.png" alt="Models for Comparison" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
+
+<p>
+    <img src="docs/assets/cf_edema.png" alt="Single Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
+
+<p>
+    <img src="docs/assets/cf_edema_mc.png" alt="Multi Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
+
+<p>
+    <img src="docs/assets/cf_edema_ml.png" alt="Multi Class Edema" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
+
+<p>
+    <img src="docs/assets/roc_all_edema (1).png" alt="ROC Edema" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
+
+<p>
+    <img src="docs/assets/roc_all_effusion (1).png" alt="ROC Effusion" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
+
+
+
 
 ### CONCLUSION
 
