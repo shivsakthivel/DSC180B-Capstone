@@ -21,7 +21,7 @@ Overall, CNNs have revolutionized the field of computer vision and have achieved
 #### Transfer Learning
 Transfer learning is a machine learning technique that involves using a pre-trained neural network to solve a new task. Instead of training a neural network from scratch, transfer learning involves taking an existing neural network that has already been trained on a large dataset and adapting it for a new task. The pre-trained neural network is typically a deep neural network that has learned to recognize complex features in images. To adapt the pre-trained network for a new task, the final layers of the network are typically replaced with new layers that are specific to the new task. These new layers are then trained on a smaller dataset that is specific to the new task. This approach allows for the transfer of knowledge from the pre-trained network, which has learned to recognize general features, to the new task, which may require more specialized features.
 
-https://www.sciencedirect.com/science/article/pii/S0378778819324843#f0050
+
 ### OBJECTIVES
 
 This project focuses on training a Convolutional Neural Network (CNN) for a supervised classification task, specifically for predicting the presence of pulmonary edema and pleural effusion in chest radiographs. The project is a series of experiments to formulate a pipeline based on deep learning best practices, to achieve the best performing model for this multi-label classification task. The first experiment involved determining the appropriate application of transfer learning to chest radiograph image data. The second experiment involved testing different formulations of the problem statement to achieve the best performing model. Separated binary label classifiers, a multi-label classifier and a multi-class classifier were all trained and evaluated using label prediction accuracy and the AUC (Area Under the Curve) of the ROC (Receiver Operating Characteristic) curve which is a measure of the model’s discriminability.
@@ -29,6 +29,11 @@ This project focuses on training a Convolutional Neural Network (CNN) for a supe
 ### METHODS
 
 #### Experiment I
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
 
 <p>
     <img src="docs/assets/transfer.jpg" alt="Decision Matrix" width="50%" margin-left="auto" margin-right="auto"/>
