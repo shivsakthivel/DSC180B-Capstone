@@ -17,17 +17,9 @@ For individual labels, the dataset has roughly the same number of positive and n
 
 ### RESULTS
 
-Table 1: Results of the Multi-Label Classifier on the Test Dataset:
-| -- | Pulmonary Edema | Pleural Effusion |
-| --- | --- | --- |
-| Test Accuracy | 78.9% | 81.0 % |
-| ROC AUC | 0.868 | 0.885 |
-
-Table 2: Results of the separately trained binary classifiers on the Test Dataset:
-| -- | Pulmonary Edema | Pleural Effusion |
-| --- | --- | --- |
-| Test Accuracy | 79.4% | 81.4 % |
-| ROC AUC | 0.875 | 0.901 |
+<p>
+    <img src="./sample_train.png" alt="training sample" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
 
 ### CONCLUSION
 
