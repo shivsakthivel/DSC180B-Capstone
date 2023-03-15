@@ -7,7 +7,7 @@ Convolutional Neural Networks (CNNs) are a powerful class of deep neural network
 
 The key component of a CNN is the convolutional layer, which applies a set of learnable filters to the input image to extract local features. These filters slide over the entire image and perform a dot product operation with the local patch of pixels they are currently positioned over. By stacking multiple convolutional layers, the network can learn increasingly abstract and complex features, allowing it to capture high-level information such as object shapes, textures, and patterns. In addition to the convolutional layers, CNNs also typically include pooling layers to reduce the spatial dimensions of the feature maps and improve the computational efficiency of the network, and fully connected layers to perform the final classification or regression task.
 
-<p>
+<p align="center">
     <img src="docs/assets/cnn_image.png" alt="CNN" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 <a href= "https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53"> Image Source </a>
@@ -29,10 +29,10 @@ This project focuses on training a Convolutional Neural Network (CNN) for a supe
 
 The decision of when to unfreeze layers in a pre-trained neural network depends on several factors, such as the size and similarity of the new dataset to the original dataset, the complexity of the new task, and the performance of the model on the new task. The following decision matrix outlines the appropriate use of transfer learning to obtain the best performance.
 
-<p>
+<p align="center">
     <img src="docs/assets/transfer.jpg" alt="Decision Matrix" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
-<a href= "https://www.sciencedirect.com/science/article/pii/S0378778819324843#f0050"> Image Source </a>
+<a align="center" href= "https://www.sciencedirect.com/science/article/pii/S0378778819324843#f0050"> Image Source </a>
 
 In this instance, the ImageNet dataset, on which the transfer learning architecture is pre-trained on, consists of over 14 million images, which have been annotated with object labels and bounding boxes. The chest radiograph image data used in this project is dissimilar enough to the ImageNet dataset to warrant an investigation into whether layers with pre-trained weights should be unfrozen in the training process. This experiment was conducted partly during Quarter 1, and extended for its specific application for this quarter’s project. During Quarter 1, I trained a CNN regression model on similar chest radiograph image data with continuous BNPP serum biomarker labels from a dataset compiled at UCSD Health. Initially, I left all 566 layers in the ResNet152 architecture frozen but quickly realized that due to the huge imbalance in number of trainable to untrainable parameters, the model simply wasn't learning. Therefore, I decided to explore unfreezing certain layers iteratively in the following schedule, and observed the following:
 
@@ -46,7 +46,7 @@ In this instance, the ImageNet dataset, on which the transfer learning architect
 
 The major observation from this experiment was that unfreezing further layers in the architecture allows the model to better fit to the new dataset, up until a certain point where it would begin to overfit as seen when Convolution Layer 4 was also unfrozen for learning. 
 
-<p>
+<p align="center">
     <img src="docs/assets/training.PNG" alt="Training Pipeline" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
@@ -57,7 +57,7 @@ The Model Training Pipeline shown in the figure was adapted from the Quarter 1 e
 
 Three approaches to implementing this multi-label classification task will be explored in this experiment, each with their own advantages and disadvantages. The following figure is a representation of the respective model architectures:
 
-<p>
+<p align="center">
     <img src="docs/assets/models.PNG" alt="Models for Comparison" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
@@ -74,23 +74,23 @@ Model (c) describes a multi-class classifier. The use of a multi-class classifie
 ### RESULTS
 
 
-<p>
+<p align="center">
     <img src="docs/assets/cf_edema.png" alt="Single Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
-<p>
+<p align="center">
     <img src="docs/assets/cf_edema_mc.png" alt="Multi Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
-<p>
+<p align="center">
     <img src="docs/assets/cf_edema_ml.png" alt="Multi Class Edema" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
-<p>
+<p align="center">
     <img src="docs/assets/roc_all_edema (1).png" alt="ROC Edema" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
-<p>
+<p align="center">
     <img src="docs/assets/roc_all_effusion (1).png" alt="ROC Effusion" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
