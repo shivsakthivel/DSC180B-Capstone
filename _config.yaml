@@ -1,3 +1,3 @@
 theme: jekyll-theme-slate
-title: DSC 180B Capstone Project
-description: Are pretrained CNN architectures viable for anamoly detection?
+title: Are pretrained CNN architectures viable for anamoly detection?
+description: Multi-label Classification to simultaneously predict Pulmonary Edema and Pleural Effusion
