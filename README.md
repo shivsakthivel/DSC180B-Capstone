@@ -1,6 +1,8 @@
 ### Exploring the viability of Convolutional Neural Networks (CNNs) on a multi-label classification task to simultaneously detect Pulmonary Edema and Pleural Effusion
 
+
 ### BACKGROUND
+
 
 #### Convolutional Neural Networks (CNN)
 Convolutional Neural Networks (CNNs) are a powerful class of deep neural networks that have shown remarkable success in a variety of computer vision tasks, such as image classification, object detection, and segmentation. CNNs were inspired by the visual processing mechanism of the human brain and are designed to automatically learn hierarchical representations of visual features from raw data, such as images.
