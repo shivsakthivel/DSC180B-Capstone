@@ -107,3 +107,4 @@ Finally, these last two figures are a comparison of the models' performance on a
 
 ### CONCLUSION
 
+In this project, I investigated the effectiveness of progressively unfreezing blocks of layers in the large ResNet152 architecture for a binary-label classification task involving pulmonary edema and pleural effusion, and found that this technique led to a speed-up in model convergence before overfitting occurred, which improved the overall efficiency of the model. I also compared the performance of multiclass and multilabel classifiers for this task, and found that the multiclass classifier was a more efficient method when considering training time, with little to no tradeoff in overall prediction accuracy or model discriminability.
