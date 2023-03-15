@@ -61,11 +61,13 @@ Three approaches to implementing this multi-label classification task will be ex
     <img src="docs/assets/models.PNG" alt="Models for Comparison" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
-Model (a) describes a set of binary label classifiers. In this method, two separate ResNet152 architectures are trained, one using the Pulmonary Edema label and the other, the Pleural Effusion label. The final layer is augmented to a fully connected linear layer, with one output activated by a sigmoid function. The advantage of this approach is that the architecture can focus on fitting to a single target variable, rather than multiple variables. Therefore, the model expected to perform well on prediction accuracy. However, the time involved in training multiple classifiers is a major disadvantage compared to models (b) and (c).
+Model (a) describes a set of binary label classifiers. In this method, two separate ResNet152 architectures are trained, one using the Pulmonary Edema label and the other, the Pleural Effusion label. The final layer is augmented to a fully connected linear layer, with one output activated by a sigmoid function.
 
-Model (b) describes a multi-label classifier. In this method, one ResNet152 architecture is trained with both labels as the input. The final layer is augmented to a fully connected linear layer, with two outputs activated by a sigmoid function, corresponding to the pulmonary edema and pleural effusion labels. The scaleup in training time is the major advantage offered by this approach, however there is an expected tradeoff in prediction accuracy due to the same architecture, now having to fit to two labels.
+Model (b) describes a multi-label classifier. In this method, one ResNet152 architecture is trained with both labels as the input. The final layer is augmented to a fully connected linear layer, with two outputs activated by a sigmoid function, corresponding to the pulmonary edema and pleural effusion labels. 
 
-Model (c) describes a multi-class classifier. The use of a multi-class classifier for a multi-label classification task is counterintuitive. However, when considering that pulmonary edema and pleural effusion are conditions that often present together in patients, the dataset of ~34,000 is skewed towards cases with the labels (0, 0) or (1, 1). Therefore, a multi-label classifier is likely to fit in such a manner, where the prediction of one label dictates the prediction of the other label, leading to misclassifications in cases where only one of the conditions are present in the radiograph. It would be worthwhile to investigate a training method where the loss calculated during training is weighted by a proportion inverse to its label representation in the dataset. Therefore, this class imbalance is addressed by reframing the multi-label classification task as a multi-class classification task where the array of labels are collapsed as: {(0, 0): 0, (0, 1): 1, (1, 0): 2, (1, 1): 3}, into 4 classes.  For this classifier, the final layer is augmented to a fully connected linear layer, with four outputs activated by a softmax function, with each output corresponding to prediction confidence probability of each class. Once the model provides its prediction on the test data, the four outputs are concatenated using those probabilities in the following manner:
+Model (c) describes a multi-class classifier. The use of a multi-class classifier for a multi-label classification task is counterintuitive. However, when considering that pulmonary edema and pleural effusion are conditions that often present together in patients, the dataset of ~34,000 is skewed towards cases with the labels (0, 0) or (1, 1).
+
+It would be worthwhile to investigate a training method where the loss calculated during training is weighted by a proportion inverse to its label representation in the dataset. Therefore, this class imbalance is addressed by reframing the multi-label classification task as a multi-class classification task where the array of labels are collapsed as: {(0, 0): 0, (0, 1): 1, (1, 0): 2, (1, 1): 3}, into 4 classes.  For this classifier, the final layer is augmented to a fully connected linear layer, with four outputs activated by a softmax function, with each output corresponding to prediction confidence probability of each class. Once the model provides its prediction on the test data, the four outputs are concatenated using those probabilities in the following manner:
 
 - Prediction for Presence of Pulmonary Edema: (0 * P(0)) + (0 * P(1)) + (1 * P(2)) + (1 * P(3))
 - Prediction for Presence of Pulmonary Edema: (0 * P(0)) + (1 * P(1)) + (0 * P(2)) + (1 * P(3))
@@ -76,14 +78,8 @@ Model (c) describes a multi-class classifier. The use of a multi-class classifie
 
 <p align="center">
     <img src="docs/assets/cf_edema.png" alt="Single Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
-</p>
-
-<p align="center">
     <img src="docs/assets/cf_edema_mc.png" alt="Multi Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
-</p>
-
-<p align="center">
-    <img src="docs/assets/cf_edema_ml.png" alt="Multi Class Edema" width="50%" margin-left="auto" margin-right="auto"/>
+    <img src="docs/assets/cf_edema_ml.png" alt="Multi Class Edema" width="50%" margin-left="auto" margin-right="auto"/>    
 </p>
 
 <p align="center">
