@@ -97,7 +97,7 @@ The following two figures are a summary comparison of the models' discriminabili
 Finally, these last two figures are a comparison of the models' performance on accuracy across both labels and their training time:
 
 <body>
-    <center><iframe="docs/assets/acc.html"></iframe></center>
+    <center><iframe src="docs/assets/acc.html" width = "50%" margin-left="auto" margin-right="auto"/></iframe></center>
 </body>
 
 <p align="center">
