@@ -1,6 +1,3 @@
-### Exploring the viability of Convolutional Neural Networks (CNNs) on a multi-label classification task to simultaneously detect Pulmonary Edema and Pleural Effusion
-
-
 ### BACKGROUND
 
 
