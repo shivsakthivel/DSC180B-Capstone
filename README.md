@@ -75,12 +75,17 @@ It would be worthwhile to investigate a training method where the loss calculate
 
 ### RESULTS
 
+The following figures and table show the results of the best model obtained for the methods (a), (b) and (c). The first set of figures are the confusion matrices of the model predictions for the Pulmonary Edema Label on an unseen test set (n = 3371). A confusion matrix visualizes the number of true positives, false positives, false negatives and true negatives. The raw outputs of each model were converted to binary predictions at the threshold 0.5:
 
 <p float="left">
     <img src="docs/assets/cf_edema.png" alt="Single Label Edema" width="30%" margin-left="auto" margin-right="auto"/>
     <img src="docs/assets/cf_edema_mc.png" alt="Multi Label Edema" width="30%" margin-left="auto" margin-right="auto"/>
     <img src="docs/assets/cf_edema_ml.png" alt="Multi Class Edema" width="30%" margin-left="auto" margin-right="auto"/>    
 </p>
+
+(From left to right: Single Label Classifier, Multi-label Classifier, Multi-class Classifier)
+
+The following two figures are a summary comparison of the models' discriminability, i.e the ability of the classifier to distinguish between the binary labels, as measured using the area under the ROC curve:
 
 <p align="center">
     <img src="docs/assets/roc_all_edema (1).png" alt="ROC Edema" width="50%" margin-left="auto" margin-right="auto"/>
@@ -90,8 +95,15 @@ It would be worthwhile to investigate a training method where the loss calculate
     <img src="docs/assets/roc_all_effusion (1).png" alt="ROC Effusion" width="50%" margin-left="auto" margin-right="auto"/>
 </p>
 
+Finally, these last two figures are a comparison of the models' performance on accuracy across both labels and their training time:
 
+<p align="center">
+    <img src="docs/assets/acc (3).png" alt="Accuracy" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
 
+<p align="center">
+    <img src="docs/assets/comp (1).png" alt="Training Time" width="50%" margin-left="auto" margin-right="auto"/>
+</p>
 
 ### CONCLUSION
 
