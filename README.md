@@ -77,9 +77,9 @@ It would be worthwhile to investigate a training method where the loss calculate
 
 
 <p float="left">
-    <img src="docs/assets/cf_edema.png" alt="Single Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
-    <img src="docs/assets/cf_edema_mc.png" alt="Multi Label Edema" width="50%" margin-left="auto" margin-right="auto"/>
-    <img src="docs/assets/cf_edema_ml.png" alt="Multi Class Edema" width="50%" margin-left="auto" margin-right="auto"/>    
+    <img src="docs/assets/cf_edema.png" alt="Single Label Edema" width="30%" margin-left="auto" margin-right="auto"/>
+    <img src="docs/assets/cf_edema_mc.png" alt="Multi Label Edema" width="30%" margin-left="auto" margin-right="auto"/>
+    <img src="docs/assets/cf_edema_ml.png" alt="Multi Class Edema" width="30%" margin-left="auto" margin-right="auto"/>    
 </p>
 
 <p align="center">
